@@ -3,10 +3,10 @@ import pandas as pd
 
 
 #theme
-primaryColor="#F63366"
+primaryColor="#411e66"
 backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
+secondaryBackgroundColor="#fdf2ff"
+textColor="#411e66"
 font="sans serif"
 
 st.sidebar.title("Features")
