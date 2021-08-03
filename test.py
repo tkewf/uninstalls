@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from annotated_text import annotated_text
 from PIL import Image
 background = Image.open('wayfairapp.png')
 
@@ -80,7 +81,7 @@ if __name__ == "__main__":
  if st.button("Click Here to Classify", ):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-     st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
+     st.title.annotated_text('There is a 93% chance that this person has ',('**_not_**' ,'#F0E68C'	),'uninstalled the WFUS App.')
     else:
      st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
 
