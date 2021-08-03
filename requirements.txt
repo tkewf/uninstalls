@@ -1,3 +1,4 @@
 pandas
 streamlit
-st-annotated-text
+emoji
+
