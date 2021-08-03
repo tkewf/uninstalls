@@ -3,8 +3,9 @@ import pandas as pd
 from PIL import Image
 background = Image.open('wayfairapp.png')
 
+st.sidebar.image(background, width=80)
 st.sidebar.title("Features")
-st.sidebar.image(background, width=100)
+
 #Intializing
 parameter_list_slider=['Days since Last App Visit','Days since First App Visit']
 parameter_list_num=['Average Total Page Views (per session)','Batch Delivers Received last week','Number of App Visits last week']
