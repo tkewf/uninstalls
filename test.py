@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
 
+
+#theme
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
+
 st.sidebar.title("Features")
 #Intializing
 parameter_list=['Average Total Page Views (per session)','Batch Delivers Received last week','Days since Last App Visit','Days since First App Visit', 'Number of App Visits last week']
