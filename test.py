@@ -82,7 +82,7 @@ def tree_new(input_variables): #max depth = 8, features = 5
 if st.sidebar.button("Click Here to Classify"):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-        st.markdown("# :relaxed: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
+        st.markdown("# :blush: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
         #st.markdown("# :point_left: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
