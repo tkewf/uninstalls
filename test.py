@@ -81,7 +81,7 @@ if __name__ == "__main__":
  if st.button("Click Here to Classify", ):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-     title.annotated_text('There is a 93% chance that this person has ',('not','','#F0E68C'	),'uninstalled the WFUS App.')
+     st.title(annotated_text('There is a 93% chance that this person has ',('not','','#F0E68C'	),'uninstalled the WFUS App.'))
     else:
      st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
 
