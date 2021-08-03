@@ -1,3 +1,4 @@
 pandas
 streamlit
 numpy
+annotated_text
