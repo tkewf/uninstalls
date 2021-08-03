@@ -69,8 +69,8 @@ def tree_new(input_variables): #max depth = 8, features = 5
      
 if __name__ == "__main__":
  if st.button("Click Here to Classify"):
-    prediction = tree_new(input variables)
-    st.title("0") if prediction == 0 else st.title("1")  if prediction == 1 
+    prediction = tree_new(input_variables)
+ st.title("0") if prediction == 0 else st.title("1")  if prediction == 1 
   
   
   
