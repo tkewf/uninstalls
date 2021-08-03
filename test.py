@@ -14,11 +14,11 @@ for parameter, parameter_df in zip(parameter_list, parameter_default_values):
  values= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
  parameter_input_values.append(values)
  
-input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
-st.write('\n\n')
+#input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
+#st.write('\n\n')
 
 def tree_new(input_variables): #max depth = 8, features = 5
-  AvgTotalPageViews = input_variables.iloc[1]
+  AvgTotalPageViews = input_variables.iloc[0,1]
   batch_delivers = input_variables.iloc[2]
   days_since_lastappvisit = input_variables.iloc[3]
   days_since_firstappvisit = input_variables.iloc[4]
@@ -70,7 +70,7 @@ def tree_new(input_variables): #max depth = 8, features = 5
      
 if __name__ == "__main__":
  if st.button("Click Here to Classify"):
-    prediction = tree_new(input_variables)
+    prediction = tree_new(parameter_input_values)
     if prediction == 0 :
      st.title("0") 
     else:
