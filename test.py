@@ -82,6 +82,6 @@ def tree_new(input_variables): #max depth = 8, features = 5
 if st.sidebar.button("Click Here to Classify"):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-        st.title('emoji.emojize(:smiling face with hearts: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.'))
+        st.title('emoji.emojize(':smiling face with hearts:') There is a 93% chance that this person has **_not_** uninstalled the WFUS App.'))
     else:
         st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
