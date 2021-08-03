@@ -3,7 +3,7 @@ import pandas as pd
 from PIL import Image
 background = Image.open('wayfairapp.png')
 
-st.sidebar.image(background, width=50)
+##st.sidebar.image(background, width=50)
 st.sidebar.title("Features")
 #Intializing
 parameter_list_slider=['Days since Last App Visit','Days since First App Visit']
