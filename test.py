@@ -16,7 +16,7 @@ for parameter, parameter_df in zip(parameter_list, parameter_default_values):
 input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
 st.write('\n\n')
 
-def tree_new(input_variables): #max depth = 8, features = 5
+def tree_new(input_variables) #max depth = 8, features = 5
   AvgTotalPageViews = input_variables.iloc[1]
   batch_delivers = input_variables.iloc[2]
   days_since_lastappvisit = input_variables.iloc[3]
