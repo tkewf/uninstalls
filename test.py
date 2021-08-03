@@ -85,4 +85,4 @@ if st.sidebar.button("Click Here to Classify"):
         st.markdown(' # :heart_eyes: There is a 93% chance that this person has not uninstalled the WFUS App.')
         #st.markdown("# :point_left: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
     else:
-        st.markdown("# There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
+        st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
