@@ -77,9 +77,9 @@ def tree_new(input_variables): #max depth = 8, features = 5
     elif batch_delivers > 0.5:
        return (0)
      
-if __name__ == "__main__":
+#if __name__ == "__main__":
  
-   if st.button("Click Here to Classify", ):
+   if st.sidebar.button("Click Here to Classify", ):
        prediction = tree_new(parameter_input_values)
        if prediction == 0 :
            st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
