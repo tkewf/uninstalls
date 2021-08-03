@@ -79,13 +79,9 @@ def tree_new(input_variables): #max depth = 8, features = 5
      
 if __name__ == "__main__":
  
- col1, col2= st.beta_columns(2)
-with col2:
-    pass
-with col1 :
-    if st.button("**_Click Here to Classify_**", ):
-        prediction = tree_new(parameter_input_values)
-        if prediction == 0 :
-            st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
-        else:
-            st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
+   if st.button("Click Here to Classify", ):
+       prediction = tree_new(parameter_input_values)
+       if prediction == 0 :
+           st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
+       else:
+           st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
