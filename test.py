@@ -79,16 +79,10 @@ def tree_new(input_variables): #max depth = 8, features = 5
      
 if __name__ == "__main__":
  
- col1, col2, col3 , col4, col5 = st.beta_columns(5)
-with col1:
-    pass
+ col1, col2= st.beta_columns(2)
 with col2:
     pass
-with col4:
-    pass
-with col5:
-    pass
-with col3 :
+with col1 :
     if st.button("Click Here to Classify", ):
         prediction = tree_new(parameter_input_values)
         if prediction == 0 :
