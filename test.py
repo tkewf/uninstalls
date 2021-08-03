@@ -78,10 +78,14 @@ def tree_new(input_variables): #max depth = 8, features = 5
        return (0)
      
 #if __name__ == "__main__":
+
+st.markdown(' ## What Type of Beer am I Drinking?')
+st.markdown(' ### :point_left: Check the sidebar for more details!')
+st.markdown(' ### All variables set to default mean values.')
  
 if st.sidebar.button("Click Here to Classify"):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-        st.title('emoji.emojize(':smiling face with hearts:') There is a 93% chance that this person has **_not_** uninstalled the WFUS App.'))
+        st.title(':smiling face with hearts:'There is a 93% chance that this person has **_not_** uninstalled the WFUS App.'))
     else:
         st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
