@@ -72,9 +72,9 @@ if __name__ == "__main__":
  if st.button("Click Here to Classify"):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
-     st.title("0") 
+     st.title("There is a 93% chance that this person has not uninstalled the WFUS App.") 
     else:
-     st.title("1")
+     st.title("There is a 93% chance that this person has uninstalled the WFUS App.")
 
   
   
