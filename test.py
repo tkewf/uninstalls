@@ -12,11 +12,11 @@ values=[]
 
 #Display
 for parameter, parameter_df in zip(parameter_list_slider, parameter_default_values_slider):
- values_slider= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
+ values_slider= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=1000, step=1)
  parameter_input_values.append(values_slider)
  
 for parameter, parameter_df in zip(parameter_list_num, parameter_default_values_num): 
- values_num= st.sidebar.number_input(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
+ values_num= st.sidebar.number_input(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=0.1,format="%.2f")
  parameter_input_values.append(values_num)
  
 #input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
