@@ -3,16 +3,21 @@ import pandas as pd
 
 st.sidebar.title("Features")
 #Intializing
-parameter_list=['Average Total Page Views (per session)','Batch Delivers Received last week','Days since Last App Visit','Days since First App Visit', 'Number of App Visits last week']
+parameter_list_slider=['Days since Last App Visit','Days since First App Visit']
+parameter_list_num=['Average Total Page Views (per session)','Batch Delivers Received last week','Number of App Visits last week']
+parameter_default_values_slider=['0','0']
+parameter_default_values_num=['0','0','0']
 parameter_input_values=[]
-parameter_default_values=['0','0','0','0','0']
 values=[]
 
 #Display
-for parameter, parameter_df in zip(parameter_list, parameter_default_values):
+for parameter, parameter_df in zip(parameter_list_slider, parameter_default_values_slider):
+ values_slider= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
+ parameter_input_values.append(values_slider)
  
- values= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
- parameter_input_values.append(values)
+for parameter, parameter_df in zip(parameter_list_num, parameter_default_values_num): 
+ values_num= st.number_input(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
+ parameter_input_values.append(values_num)
  
 #input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
 #st.write('\n\n')
