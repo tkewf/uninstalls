@@ -90,8 +90,8 @@ with col5:
     pass
 with col3 :
     if st.button("Click Here to Classify", ):
-    prediction = tree_new(parameter_input_values)
+        prediction = tree_new(parameter_input_values)
         if prediction == 0 :
-         st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
+            st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
         else:
-         st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
+            st.title("There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
