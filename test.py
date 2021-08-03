@@ -83,7 +83,7 @@ if __name__ == "__main__":
 with col2:
     pass
 with col1 :
-    if st.button("**Click Here to Classify**", ):
+    if st.button("**_Click Here to Classify_**", ):
         prediction = tree_new(parameter_input_values)
         if prediction == 0 :
             st.title('There is a 93% chance that this person has **_not_** uninstalled the WFUS App.')
