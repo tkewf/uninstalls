@@ -18,11 +18,11 @@ for parameter, parameter_df in zip(parameter_list, parameter_default_values):
 #st.write('\n\n')
 
 def tree_new(input_variables): #max depth = 8, features = 5
-  AvgTotalPageViews = input_variables.iloc[0,1]
-  batch_delivers = input_variables.iloc[2]
-  days_since_lastappvisit = input_variables.iloc[3]
-  days_since_firstappvisit = input_variables.iloc[4]
-  num_app_visits = input_variables.iloc[5]
+  AvgTotalPageViews = input_variables[0]
+  batch_delivers = input_variables[1]
+  days_since_lastappvisit = input_variables[2]
+  days_since_firstappvisit = input_variables[3]
+  num_app_visits = input_variables[4]
 
   if AvgTotalPageViews <= 0.5:
      return (1)
