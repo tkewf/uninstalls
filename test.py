@@ -10,8 +10,8 @@ values=[]
 #Display
 for parameter, parameter_df in zip(parameter_list, parameter_default_values):
  
- values= st.sidebar.slider(label=parameter, key=parameter,value=float(parameter_df), min_value=0.0, max_value=500, step=1)
+ values= st.sidebar.slider(label=parameter, key=parameter,value=int(parameter_df), min_value=0, max_value=500, step=1)
  parameter_input_values.append(values)
  
-input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=float)
+input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
 st.write('\n\n')
