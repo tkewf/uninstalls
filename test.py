@@ -79,7 +79,7 @@ def tree_new(input_variables): #max depth = 8, features = 5
      
 #if __name__ == "__main__":
 
-st.markdown(' ## What Type of Beer am I Drinking?')
+st.markdown(' # :smiley_face: What Type of Beer am I Drinking?')
 st.markdown(' ### :point_left: Check the sidebar for more details!')
 st.markdown(' ### All variables set to default mean values.')
  
