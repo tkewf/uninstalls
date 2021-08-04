@@ -2,3 +2,4 @@ pandas
 streamlit
 emoji
 streamlit_lottie
+urllib.request
