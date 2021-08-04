@@ -2,7 +2,16 @@ import streamlit as st
 import pandas as pd
 from annotated_text import annotated_text
 from PIL import Image
-background = Image.open('wayfairapp.png')
+from streamlit_lottie import st_lottie
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_book = load_lottieurl('https://lottiefiles.com/66208-furniture')
+st_lottie(lottie_book, speed=2, height=500, key="initial")
 
 ##st.sidebar.image(background, width=50)
 st.sidebar.title("Features")
