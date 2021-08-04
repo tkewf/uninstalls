@@ -3,3 +3,4 @@ streamlit
 emoji
 streamlit_lottie
 urllib.request
+requests
