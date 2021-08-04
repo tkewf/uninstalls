@@ -95,3 +95,14 @@ if st.sidebar.button("Click Here to Classify"):
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
         
+        
+    col1, col2 = st.beta_columns(2)
+
+    #original = Image.open(image)
+    col1.header("Original")
+    #col1.image(original, use_column_width=True)
+
+    #grayscale = original.convert('LA')
+    col2.header("Grayscale")
+    #col2.image(grayscale, use_column_width=True)
+        
