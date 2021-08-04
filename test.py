@@ -9,7 +9,7 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
-lottie_book = load_lottieurl('https://lottiefiles.com/66208-furniture')
+lottie_book = load_lottieurl('https://assets9.lottiefiles.com/packages/lf20_bfcbo83f.json')
 st_lottie(lottie_book, speed=2, height=500, key="initial")
 
 ##st.sidebar.image(background, width=50)
