@@ -104,9 +104,4 @@ row3_space1, row3_1, row3_space2, row3_2, row3_space3 = st.beta_columns(
 
 with row3_1, _lock:
     st.subheader('Books Read')
-    
-    else:
-        st.markdown(
-            "We do not have information to find out _when_ you read your books")
-
-    st.markdown("It looks like you've read a grand total of **{} books with {} authors,** with {} being your most read author! That's awesome. ")
+     st.markdown("It looks like you've read a grand total of **{} books with {} authors,** with {} being your most read author! That's awesome. ")
