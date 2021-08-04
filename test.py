@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-from annotated_text import annotated_text
-from PIL import Image
 from streamlit_lottie import st_lottie
 
 def load_lottieurl(url: str):
