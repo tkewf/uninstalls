@@ -10,7 +10,7 @@ def load_lottieurl(url: str):
     return r.json()
 
 lottie_book = load_lottieurl('https://assets9.lottiefiles.com/packages/lf20_bfcbo83f.json')
-st_lottie(lottie_book, speed=2, height=500, key="initial")
+st_lottie(lottie_book, speed=1, height=300, key="initial")
 
 ##st.sidebar.image(background, width=50)
 st.sidebar.title("Features")
@@ -94,3 +94,19 @@ if st.sidebar.button("Click Here to Classify"):
         #st.markdown("# :point_left: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
+        
+        
+        
+st.write('')
+row3_space1, row3_1, row3_space2, row3_2, row3_space3 = st.beta_columns(
+    (.1, 1, .1, 1, .1))
+
+
+with row3_1, _lock:
+    st.subheader('Books Read')
+    
+    else:
+        st.markdown(
+            "We do not have information to find out _when_ you read your books")
+
+    st.markdown("It looks like you've read a grand total of **{} books with {} authors,** with {} being your most read author! That's awesome. ")
