@@ -4,3 +4,4 @@ emoji
 streamlit_lottie
 requests
 matplotlib
+seaborn
