@@ -130,6 +130,7 @@ if st.sidebar.button("Click Here to Classify"):
     plt.style.use('seaborn')
     fig.set_figheight(5)
     fig.set_figwidth(10) 
+    fig.legend()
     st.pyplot(fig)
 
     
