@@ -30,9 +30,9 @@ values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit'
 parameter_input_values.append(values_slides_lastappvisit)
 
 
-values_slides_firstappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=0, max_value=1000, step=1, key = 'b')
+values_slides_firstappvisit = st.sidebar.slider(label='Days since First App Visit',value=int(0), min_value=0, max_value=1000, step=1, key = 'b')
 if values_slides_firstappvisit < values_slides_lastappvisit:
-    st.write('Your first app visit should be earlier than your last app visit!')
+    st.write('Your first app visit should be earlier than your last app visit!', color='red')
 else: 
     parameter_input_values.append(values_slides_firstappvisit)
  
