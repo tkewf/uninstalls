@@ -145,7 +145,11 @@ if st.sidebar.button("Click Here to Classify"):
         st.pyplot(fig)
 
         st.write('')
-        st.write('')  
+        st.write('') 
+        st.write(a)
+        
+        
+        
         # Second graph: Days since last app visit
         st.markdown('### Days since last app visit')
         fig, ax = plt.subplots(1,2)# figsize=(10,12))
