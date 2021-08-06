@@ -36,14 +36,14 @@ if values_slides_firstappvisit < values_slides_lastappvisit:
 else: 
     parameter_input_values.append(values_slides_firstappvisit)
  
- values_num_avgpages= st.sidebar.number_input(label='Average Total Page Views (per session)', key='c',value=float(0), min_value=0.0, max_value=500.0, step=0.1,format="%.1f")
- parameter_input_values.append(values_num_avgpages)
+values_num_avgpages= st.sidebar.number_input(label='Average Total Page Views (per session)', key='c',value=float(0), min_value=0.0, max_value=500.0, step=0.1,format="%.1f")
+parameter_input_values.append(values_num_avgpages)
 
- values_num_batch= st.sidebar.number_input(label='Batch Delivers Received last week', key='d',value=int(0), min_value=0, max_value=250, step=1)
- parameter_input_values.append(values_num_batch)
+values_num_batch= st.sidebar.number_input(label='Batch Delivers Received last week', key='d',value=int(0), min_value=0, max_value=250, step=1)
+parameter_input_values.append(values_num_batch)
     
- values_num_apppvisits= st.sidebar.number_input(label='Number of App Visits last week', key='e',value=int(0), min_value=0, max_value=250, step=1)
- parameter_input_values.append(values_num_apppvisits)
+values_num_apppvisits= st.sidebar.number_input(label='Number of App Visits last week', key='e',value=int(0), min_value=0, max_value=250, step=1)
+parameter_input_values.append(values_num_apppvisits)
 
 
  
