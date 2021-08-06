@@ -26,13 +26,13 @@ values=[]
 
 #Display
 
-lastappvisit = 'lastsappvisit'
-
-values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=0, max_value=1000, step=1, key = lastappvisit)
+values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=0, max_value=1000, step=1)
 parameter_input_values.append(values_slides_lastappvisit)
 
 
 values_slides_firstappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=lastappvisit, max_value=1000, step=1)
+if values_slides_firstappvisit < values_slides_lastappvisit:
+    st.write('Your first app visit should be earlier than your last app visit!)
 parameter_input_values.append(values_slides_firstappvisit)
  
 for parameter, parameter_df in zip(parameter_list_num, parameter_default_values_num): 
