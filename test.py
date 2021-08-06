@@ -126,7 +126,6 @@ if st.sidebar.button("Click Here to Classify"):
     ax[1].set_title('Persisting users')
     ax[1].set_ylim(top=10000)
     ax[1].set_xlabel('Days')
-    ax[1].set_ylabel('Number of Users')
 
     plt.style.use('seaborn')
     fig.set_figheight(5)
