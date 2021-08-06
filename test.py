@@ -111,7 +111,7 @@ if st.sidebar.button("Click Here to Classify"):
     
     # First graph: Days since last visit
     st.markdown('### Days since first app visit')
-    fig, ax = plt.subplots(1,2, figsize=(3,6))
+    fig, ax = plt.subplots(1,2, figsize=(5,10))
 
     fig.suptitle('Days since Install', fontsize=20)
 
