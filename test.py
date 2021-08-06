@@ -104,7 +104,7 @@ if st.sidebar.button("Click Here to Classify"):
     
     
     # Plots
-    df = pd.read_csv('data_for_graph.csv')
+    df = pd.read_csv('data_for_graph(1).csv')
     df_uninstalled_sample = df[df['uninstalled']==1]
     df_persisting_sample = df[df['uninstalled']==0]
     
