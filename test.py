@@ -129,7 +129,7 @@ if st.sidebar.button("Click Here to Classify"):
 
     plt.style.use('seaborn')
     fig.set_figheight(20)
-    fig.set_figwidth(20) 
+    fig.set_figwidth(5) 
     st.pyplot(fig)
 
     
