@@ -182,3 +182,28 @@ if st.sidebar.button("Click Here to Classify"):
     fig.set_figwidth(12) 
     fig.legend()
     st.pyplot(fig)
+    
+    # Fourth graph: Avg page views per session
+    st.markdown('### Number of app visits since last week')
+    fig, ax = plt.subplots(1,2)# figsize=(10,12))
+
+    fig.suptitle('Number of app visits since last week', fontsize=20)
+
+    ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,50],bins=50,color = 'maroon')
+    ax[0].set_title('Uninstalled users')
+    ax[0].set_ylim(top=12000)
+    ax[0].set_xlabel('Page Views')
+    ax[0].set_ylabel('Number of Users')
+    ax[0].axvline(parameter_input_values[2], 0, 10000, label='User value', color = 'purple')
+
+    ax[1].hist(df_persisting_sample['num_app_visits'],range=[0,50],bins=50, color='skyblue')
+    ax[1].set_title('Persisting users')
+    ax[1].set_ylim(top=12000)
+    ax[1].set_xlabel('Page Views')
+
+    plt.style.use('seaborn')
+    fig.set_figheight(5)
+    fig.set_figwidth(12) 
+    fig.legend()
+    st.pyplot(fig)
+
