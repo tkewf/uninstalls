@@ -100,11 +100,7 @@ if st.sidebar.button("Click Here to Classify"):
     st.markdown('## How does this person compare to the typical Wayfair Android App User?')
     col1, col2 = st.beta_columns(2)
     st.write('')
-    #original = Image.open(image)
-    col1.header("Original")
-    #col1.image(original, use_column_width=True)
+    
+    # First graph: Days since last visit
+    st.markdown('### Days since last visit')
 
-    #grayscale = original.convert('LA')
-    col2.header("Grayscale")
-    #col2.image(grayscale, use_column_width=True)
-        
