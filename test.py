@@ -94,7 +94,8 @@ if st.sidebar.button("Click Here to Classify"):
         #st.markdown("# :point_left: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
-        
+    
+    st.write('')
         
     col1, col2 = st.beta_columns(2)
 
