@@ -138,7 +138,7 @@ if st.sidebar.button("Click Here to Classify"):
     st.markdown('### Days since last app visit')
     fig, ax = plt.subplots(1,2)# figsize=(10,12))
 
-    fig.suptitle('Days since Install', fontsize=20)
+    fig.suptitle('Days since Last App Visit', fontsize=20)
 
     ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[1,500],bins=40,color = 'maroon')
     ax[0].set_title('Uninstalled users')
