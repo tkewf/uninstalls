@@ -30,15 +30,22 @@ values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit'
 parameter_input_values.append(values_slides_lastappvisit)
 
 
-values_slides_firstappvisit = st.sidebar.slider(label='Days since First App Visit',value=int(0), min_value=int(a), max_value=1000, step=1, key = 'b')
+values_slides_firstappvisit = st.sidebar.slider(label='Days since First App Visit',value=int(0), min_value=int(values_slides_lastappvisit), max_value=1000, step=1, key = 'b')
 if values_slides_firstappvisit < values_slides_lastappvisit:
     st.write('Your first app visit should be earlier than your last app visit!')
 else: 
     parameter_input_values.append(values_slides_firstappvisit)
  
-for parameter, parameter_df in zip(parameter_list_num, parameter_default_values_num): 
- values_num= st.sidebar.number_input(label=parameter, key=parameter,value=float(parameter_df), min_value=0.0, max_value=500.0, step=0.1,format="%.1f")
- parameter_input_values.append(values_num)
+ values_num_avgpages= st.sidebar.number_input(label='Average Total Page Views (per session)', key='c',value=float(0), min_value=0.0, max_value=500.0, step=0.1,format="%.1f")
+ parameter_input_values.append(values_num_avgpages)
+
+ values_num_batch= st.sidebar.number_input(label='Batch Delivers Received last week', key='d',value=int(0), min_value=0, max_value=250, step=1)
+ parameter_input_values.append(values_num_batch)
+    
+ values_num_apppvisits= st.sidebar.number_input(label='Number of App Visits last week', key='e',value=int(0), min_value=0, max_value=250, step=1)
+ parameter_input_values.append(values_num_apppvisits)
+
+
  
 #input_variables=pd.DataFrame([parameter_input_values],columns=parameter_list,dtype=int)
 #st.write('\n\n')
