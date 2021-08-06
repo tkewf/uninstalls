@@ -140,7 +140,7 @@ if st.sidebar.button("Click Here to Classify"):
 
     fig.suptitle('Days since Last App Visit', fontsize=20)
 
-    ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[0,500],bins=40,color = 'maroon')
+    ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[0,500],bins=40,color = 'darksalmon')
     ax[0].set_title('Uninstalled users')
     ax[0].set_ylim(top=10000)
     ax[0].set_xlabel('Days')
