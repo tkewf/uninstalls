@@ -107,123 +107,240 @@ if st.sidebar.button("Click Here to Classify"):
     prediction = tree_new(parameter_input_values)
     if prediction == 0 :
         st.markdown("# :blush: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
-        #st.markdown("# :point_left: There is a 93% chance that this person has **_not_** uninstalled the WFUS App.")
+        st.write('')
+        st.write('')
+        st.markdown('## How does this person compare to the typical Wayfair Android App User?')
+        st.write('')
+
+        # Plots
+        df = pd.read_csv('data_for_graph (1).csv')
+        df_uninstalled_sample = df[df['uninstalled']==1]
+        df_persisting_sample = df[df['uninstalled']==0]
+
+        st.write('')
+        st.write('')    
+        # First graph: Days since first visit
+        st.markdown('### Days since first app visit')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
+
+        #fig.suptitle('Days since Install', fontsize=20)
+
+        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,500],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=10000)
+        ax[0].set_xlabel('Days')
+        ax[0].set_ylabel('Number of Users')
+        
+
+        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,500],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=10000)
+        ax[1].set_xlabel('Days')
+        ax[1].axvline(parameter_input_values[1], 0, 10000, label='User value', color = 'purple')
+
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
+
+        st.write('')
+        st.write('')  
+        # Second graph: Days since last app visit
+        st.markdown('### Days since last app visit')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
+
+        #fig.suptitle('Days since Last App Visit', fontsize=20)
+
+        ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[0,500],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=10000)
+        ax[0].set_xlabel('Days')
+        ax[0].set_ylabel('Number of Users')
+        
+
+        ax[1].hist(df_persisting_sample['days_since_lastappvisit'],range=[0,500],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=10000)
+        ax[1].set_xlabel('Days')
+        ax[1].axvline(parameter_input_values[0], 0, 10000, label='User value', color = 'purple')
+
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
+
+        st.write('')
+        st.write('')  
+        # Third graph: Avg page views per session
+        st.markdown('### Average Page Views per session')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
+
+        #fig.suptitle('Average Page Views per session', fontsize=20)
+
+        ax[0].hist(df_uninstalled_sample['AvgTotalPageViews'],range=[0,80],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=15000)
+        ax[0].set_xlabel('Page Views')
+        ax[0].set_ylabel('Number of Users')
+        
+
+        ax[1].hist(df_persisting_sample['AvgTotalPageViews'],range=[0,80],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=15000)
+        ax[1].set_xlabel('Page Views')
+        ax[1].axvline(parameter_input_values[2], 0, 10000, label='User value', color = 'purple')
+
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
+
+        st.write('')
+        st.write('')  
+        # Fourth graph: Avg page views per session
+        st.markdown('### Number of app visits since last week')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
+
+        #fig.suptitle('Number of app visits since last week', fontsize=20)
+
+        ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,20],bins=20,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=20000)
+        ax[0].set_xlabel('Page Views')
+        ax[0].set_ylabel('Number of Users')
+        
+
+        ax[1].hist(df_persisting_sample['num_app_visits'],range=[0,20],bins=20, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=20000)
+        ax[1].set_xlabel('Page Views')
+        ax[1].axvline(parameter_input_values[4], 0, 10000, label='User value', color = 'purple')
+
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
+
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
     
-    st.write('')
-    st.write('')
-    st.markdown('## How does this person compare to the typical Wayfair Android App User?')
-    st.write('')
-    
-    
-    
-    # Plots
-    df = pd.read_csv('data_for_graph (1).csv')
-    df_uninstalled_sample = df[df['uninstalled']==1]
-    df_persisting_sample = df[df['uninstalled']==0]
-    
-    st.write('')
-    st.write('')    
-    # First graph: Days since first visit
-    st.markdown('### Days since first app visit')
-    fig, ax = plt.subplots(1,2)# figsize=(10,12))
+        st.write('')
+        st.write('')
+        st.markdown('## How does this person compare to the typical Wayfair Android App User?')
+        st.write('')
 
-    #fig.suptitle('Days since Install', fontsize=20)
+        # Plots
+        df = pd.read_csv('data_for_graph (1).csv')
+        df_uninstalled_sample = df[df['uninstalled']==1]
+        df_persisting_sample = df[df['uninstalled']==0]
 
-    ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,500],bins=40,color = 'darksalmon')
-    ax[0].set_title('Uninstalled users')
-    ax[0].set_ylim(top=10000)
-    ax[0].set_xlabel('Days')
-    ax[0].set_ylabel('Number of Users')
-    ax[0].axvline(parameter_input_values[1], 0, 10000, label='User value', color = 'purple')
+        st.write('')
+        st.write('')    
+        # First graph: Days since first visit
+        st.markdown('### Days since first app visit')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
 
-    ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,500],bins=40, color='skyblue')
-    ax[1].set_title('Persisting users')
-    ax[1].set_ylim(top=10000)
-    ax[1].set_xlabel('Days')
+        #fig.suptitle('Days since Install', fontsize=20)
 
-    plt.style.use('seaborn')
-    fig.set_figheight(5)
-    fig.set_figwidth(12) 
-    fig.legend()
-    st.pyplot(fig)
+        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,500],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=10000)
+        ax[0].set_xlabel('Days')
+        ax[0].set_ylabel('Number of Users')
+        ax[0].axvline(parameter_input_values[1], 0, 10000, label='User value', color = 'purple')
 
-    st.write('')
-    st.write('')  
-    # Second graph: Days since last app visit
-    st.markdown('### Days since last app visit')
-    fig, ax = plt.subplots(1,2)# figsize=(10,12))
+        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,500],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=10000)
+        ax[1].set_xlabel('Days')
 
-    #fig.suptitle('Days since Last App Visit', fontsize=20)
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
 
-    ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[0,500],bins=40,color = 'darksalmon')
-    ax[0].set_title('Uninstalled users')
-    ax[0].set_ylim(top=10000)
-    ax[0].set_xlabel('Days')
-    ax[0].set_ylabel('Number of Users')
-    ax[0].axvline(parameter_input_values[0], 0, 10000, label='User value', color = 'purple')
+        st.write('')
+        st.write('')  
+        # Second graph: Days since last app visit
+        st.markdown('### Days since last app visit')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
 
-    ax[1].hist(df_persisting_sample['days_since_lastappvisit'],range=[0,500],bins=40, color='skyblue')
-    ax[1].set_title('Persisting users')
-    ax[1].set_ylim(top=10000)
-    ax[1].set_xlabel('Days')
+        #fig.suptitle('Days since Last App Visit', fontsize=20)
 
-    plt.style.use('seaborn')
-    fig.set_figheight(5)
-    fig.set_figwidth(12) 
-    fig.legend()
-    st.pyplot(fig)
+        ax[0].hist(df_uninstalled_sample['days_since_lastappvisit'],range=[0,500],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=10000)
+        ax[0].set_xlabel('Days')
+        ax[0].set_ylabel('Number of Users')
+        ax[0].axvline(parameter_input_values[0], 0, 10000, label='User value', color = 'purple')
 
-    st.write('')
-    st.write('')  
-    # Third graph: Avg page views per session
-    st.markdown('### Average Page Views per session')
-    fig, ax = plt.subplots(1,2)# figsize=(10,12))
+        ax[1].hist(df_persisting_sample['days_since_lastappvisit'],range=[0,500],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=10000)
+        ax[1].set_xlabel('Days')
 
-    #fig.suptitle('Average Page Views per session', fontsize=20)
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
 
-    ax[0].hist(df_uninstalled_sample['AvgTotalPageViews'],range=[0,80],bins=40,color = 'darksalmon')
-    ax[0].set_title('Uninstalled users')
-    ax[0].set_ylim(top=15000)
-    ax[0].set_xlabel('Page Views')
-    ax[0].set_ylabel('Number of Users')
-    ax[0].axvline(parameter_input_values[2], 0, 10000, label='User value', color = 'purple')
+        st.write('')
+        st.write('')  
+        # Third graph: Avg page views per session
+        st.markdown('### Average Page Views per session')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
 
-    ax[1].hist(df_persisting_sample['AvgTotalPageViews'],range=[0,80],bins=40, color='skyblue')
-    ax[1].set_title('Persisting users')
-    ax[1].set_ylim(top=15000)
-    ax[1].set_xlabel('Page Views')
+        #fig.suptitle('Average Page Views per session', fontsize=20)
 
-    plt.style.use('seaborn')
-    fig.set_figheight(5)
-    fig.set_figwidth(12) 
-    fig.legend()
-    st.pyplot(fig)
-    
-    st.write('')
-    st.write('')  
-    # Fourth graph: Avg page views per session
-    st.markdown('### Number of app visits since last week')
-    fig, ax = plt.subplots(1,2)# figsize=(10,12))
+        ax[0].hist(df_uninstalled_sample['AvgTotalPageViews'],range=[0,80],bins=40,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=15000)
+        ax[0].set_xlabel('Page Views')
+        ax[0].set_ylabel('Number of Users')
+        ax[0].axvline(parameter_input_values[2], 0, 10000, label='User value', color = 'purple')
 
-    #fig.suptitle('Number of app visits since last week', fontsize=20)
+        ax[1].hist(df_persisting_sample['AvgTotalPageViews'],range=[0,80],bins=40, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=15000)
+        ax[1].set_xlabel('Page Views')
 
-    ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,20],bins=20,color = 'darksalmon')
-    ax[0].set_title('Uninstalled users')
-    ax[0].set_ylim(top=20000)
-    ax[0].set_xlabel('Page Views')
-    ax[0].set_ylabel('Number of Users')
-    ax[0].axvline(parameter_input_values[4], 0, 10000, label='User value', color = 'purple')
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
 
-    ax[1].hist(df_persisting_sample['num_app_visits'],range=[0,20],bins=20, color='skyblue')
-    ax[1].set_title('Persisting users')
-    ax[1].set_ylim(top=20000)
-    ax[1].set_xlabel('Page Views')
+        st.write('')
+        st.write('')  
+        # Fourth graph: Avg page views per session
+        st.markdown('### Number of app visits since last week')
+        fig, ax = plt.subplots(1,2)# figsize=(10,12))
 
-    plt.style.use('seaborn')
-    fig.set_figheight(5)
-    fig.set_figwidth(12) 
-    fig.legend()
-    st.pyplot(fig)
+        #fig.suptitle('Number of app visits since last week', fontsize=20)
+
+        ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,20],bins=20,color = 'darksalmon')
+        ax[0].set_title('Uninstalled users')
+        ax[0].set_ylim(top=20000)
+        ax[0].set_xlabel('Page Views')
+        ax[0].set_ylabel('Number of Users')
+        ax[0].axvline(parameter_input_values[4], 0, 10000, label='User value', color = 'purple')
+
+        ax[1].hist(df_persisting_sample['num_app_visits'],range=[0,20],bins=20, color='skyblue')
+        ax[1].set_title('Persisting users')
+        ax[1].set_ylim(top=20000)
+        ax[1].set_xlabel('Page Views')
+
+        plt.style.use('seaborn')
+        fig.set_figheight(5)
+        fig.set_figwidth(12) 
+        fig.legend()
+        st.pyplot(fig)
+
+
 
