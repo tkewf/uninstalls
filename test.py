@@ -3,6 +3,7 @@ import pandas as pd
 from streamlit_lottie import st_lottie
 import requests
 import matplotlib.pyplot as plt
+import seaborn
 
 def load_lottieurl(url: str):
     r = requests.get(url)
@@ -123,4 +124,4 @@ if st.sidebar.button("Click Here to Classify"):
     ax[1].set_ylim(top=7000)
 
     plt.style.use('seaborn')
-    plt.show()
+    st.pyplot()
