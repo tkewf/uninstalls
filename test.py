@@ -109,6 +109,8 @@ if st.sidebar.button("Click Here to Classify"):
     df_uninstalled_sample = df[df['uninstalled']==1]
     df_persisting_sample = df[df['uninstalled']==0]
     
+    st.write('')
+    st.write('')    
     # First graph: Days since first visit
     st.markdown('### Days since first app visit')
     fig, ax = plt.subplots(1,2)# figsize=(10,12))
@@ -133,7 +135,8 @@ if st.sidebar.button("Click Here to Classify"):
     fig.legend()
     st.pyplot(fig)
 
-    
+    st.write('')
+    st.write('')  
     # Second graph: Days since last app visit
     st.markdown('### Days since last app visit')
     fig, ax = plt.subplots(1,2)# figsize=(10,12))
@@ -158,7 +161,8 @@ if st.sidebar.button("Click Here to Classify"):
     fig.legend()
     st.pyplot(fig)
 
-    
+    st.write('')
+    st.write('')  
     # Third graph: Avg page views per session
     st.markdown('### Average Page Views per session')
     fig, ax = plt.subplots(1,2)# figsize=(10,12))
@@ -183,6 +187,8 @@ if st.sidebar.button("Click Here to Classify"):
     fig.legend()
     st.pyplot(fig)
     
+    st.write('')
+    st.write('')  
     # Fourth graph: Avg page views per session
     st.markdown('### Number of app visits since last week')
     fig, ax = plt.subplots(1,2)# figsize=(10,12))
