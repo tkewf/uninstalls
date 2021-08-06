@@ -96,7 +96,7 @@ if st.sidebar.button("Click Here to Classify"):
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
     
     st.write('')
-        
+    st.write('')   
     col1, col2 = st.beta_columns(2)
 
     #original = Image.open(image)
