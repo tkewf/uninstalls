@@ -26,7 +26,7 @@ values=[]
 
 #Display
 
-values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit', key=days_since_last_app_visit,value=int(0), min_value=0, max_value=1000, step=1)
+values_slides_lastappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=0, max_value=1000, step=1)
 
 
 for parameter, parameter_df in zip(parameter_list_slider, parameter_default_values_slider):
