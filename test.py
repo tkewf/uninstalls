@@ -146,7 +146,7 @@ if st.sidebar.button("Click Here to Classify"):
 
         st.write('')
         st.write('') 
-        st.write(a)
+        st.write(parameter_input_values[0])
         
         
         
