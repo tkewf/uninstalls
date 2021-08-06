@@ -4,6 +4,7 @@ from streamlit_lottie import st_lottie
 import requests
 import matplotlib.pyplot as plt
 import seaborn
+import statistics
 
 def load_lottieurl(url: str):
     r = requests.get(url)
