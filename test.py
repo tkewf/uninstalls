@@ -117,13 +117,13 @@ if st.sidebar.button("Click Here to Classify"):
 
     ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,400],bins=40,color = 'maroon')
     ax[0].set_title('Uninstalled users')
-    ax[0].set_ylim(top=8000)
+    ax[0].set_ylim(top=10000)
     ax[0].set_xlabel('Days')
     ax[0].set_ylabel('Number of Users')
 
     ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,400],bins=40, color='skyblue')
     ax[1].set_title('Persisting users')
-    ax[1].set_ylim(top=8000)
+    ax[1].set_ylim(top=10000)
     ax[1].set_xlabel('Days')
     ax[1].set_ylabel('Number of Users')
 
