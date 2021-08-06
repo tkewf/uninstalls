@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from streamlit_lottie import st_lottie
 import requests
+import matplotlib.pyplot as plt
 
 def load_lottieurl(url: str):
     r = requests.get(url)
@@ -98,9 +99,28 @@ if st.sidebar.button("Click Here to Classify"):
     st.write('')
     st.write('')
     st.markdown('## How does this person compare to the typical Wayfair Android App User?')
-    col1, col2 = st.beta_columns(2)
     st.write('')
     
+    
+    
+    # Plots
+    df = pd.read_csv('data_for_graph.csv')
+    df_uninstalled_sample = df[df['uninstalled']==1]
+    df_persisting_sample = df[df['uninstalled']==0]
+    
     # First graph: Days since last visit
-    st.markdown('### Days since last visit')
+    st.markdown('### Days since first app visit')
+    fig, ax = plt.subplots(1,2)
 
+    fig.suptitle('Days since Install', fontsize=20)
+
+    ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,400],bins=40,color = 'maroon')
+    ax[0].set_title('Uninstalled users')
+    ax[0].set_ylim(top=7000)
+
+    ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,400],bins=40, color='skyblue')
+    ax[1].set_title('Persisting users')
+    ax[1].set_ylim(top=7000)
+
+    plt.style.use('seaborn')
+    plt.show()
