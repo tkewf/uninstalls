@@ -120,6 +120,7 @@ if st.sidebar.button("Click Here to Classify"):
     ax[0].set_ylim(top=10000)
     ax[0].set_xlabel('Days')
     ax[0].set_ylabel('Number of Users')
+    ax[0].axvline(days_since_firstappvisit, 0, 10000, label='User value')
 
     ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,400],bins=40, color='skyblue')
     ax[1].set_title('Persisting users')
