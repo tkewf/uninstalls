@@ -33,7 +33,8 @@ parameter_input_values.append(values_slides_lastappvisit)
 values_slides_firstappvisit = st.sidebar.slider(label='Days since Last App Visit',value=int(0), min_value=lastappvisit, max_value=1000, step=1)
 if values_slides_firstappvisit < values_slides_lastappvisit:
     st.write('Your first app visit should be earlier than your last app visit!)
-parameter_input_values.append(values_slides_firstappvisit)
+else: 
+    parameter_input_values.append(values_slides_firstappvisit)
  
 for parameter, parameter_df in zip(parameter_list_num, parameter_default_values_num): 
  values_num= st.sidebar.number_input(label=parameter, key=parameter,value=float(parameter_df), min_value=0.0, max_value=500.0, step=0.1,format="%.1f")
