@@ -99,7 +99,7 @@ if st.sidebar.button("Click Here to Classify"):
     st.write('')
     st.markdown('## How does this person compare to the typical Wayfair Android App User?')
     col1, col2 = st.beta_columns(2)
-
+    st.write('')
     #original = Image.open(image)
     col1.header("Original")
     #col1.image(original, use_column_width=True)
