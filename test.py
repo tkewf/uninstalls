@@ -128,8 +128,8 @@ if st.sidebar.button("Click Here to Classify"):
     ax[1].set_ylabel('Number of Users')
 
     plt.style.use('seaborn')
-    fig.set_figheight(15)
-    fig.set_figwidth(15) 
+    fig.set_figheight(6)
+    fig.set_figwidth(6) 
     st.pyplot(fig)
 
     
