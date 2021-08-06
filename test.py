@@ -124,4 +124,4 @@ if st.sidebar.button("Click Here to Classify"):
     ax[1].set_ylim(top=7000)
 
     plt.style.use('seaborn')
-    st.pyplot()
+    st.pyplot(fig)
