@@ -178,7 +178,7 @@ if st.sidebar.button("Click Here to Classify"):
         fig.legend()
         st.pyplot(fig)
 
-        st.write('')
+        #st.write('')
         
         last_days_input = parameter_input_values[0]
         median_last_days_input = statistics.median(df_persisting_sample.days_since_lastappvisit)
