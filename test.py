@@ -145,8 +145,6 @@ if st.sidebar.button("Click Here to Classify"):
         fig.legend()
         st.pyplot(fig)
 
-        st.write('')
-       
         days_input = parameter_input_values[1]
         median_days_input = statistics.median(df_persisting_sample.days_since_firstappvisit)
         st.markdown("It has been **{} days** since this user installed the app,"
@@ -177,9 +175,7 @@ if st.sidebar.button("Click Here to Classify"):
         fig.set_figwidth(12) 
         fig.legend()
         st.pyplot(fig)
-
-        #st.write('')
-        
+     
         last_days_input = parameter_input_values[0]
         median_last_days_input = statistics.median(df_persisting_sample.days_since_lastappvisit)
         st.markdown("It has been **{} days** since this user last visited the app,"
@@ -212,7 +208,6 @@ if st.sidebar.button("Click Here to Classify"):
         fig.legend()
         st.pyplot(fig)
 
-        st.write('')
         avg_page_views = parameter_input_values[2]
         median_avg_page_views = statistics.median(df_persisting_sample.AvgTotalPageViews)
         st.markdown("The average number of pages viewed during the past week for this user is **{}**,"
@@ -243,6 +238,11 @@ if st.sidebar.button("Click Here to Classify"):
         fig.set_figwidth(12) 
         fig.legend()
         st.pyplot(fig)
+        
+        num_visits = parameter_input_values[3]
+        median_num_visits = statistics.median(df_persisting_sample.num_app_visits)
+        st.markdown("The number of app visits during the past week for this user is **{}**,"
+                    "compared to the median number of visits (**{}**) for **persisting** users.".format(num_visits, median_num_visits))
 
     else:
         st.markdown("# :fearful: There is a 93% chance that this person has **_uninstalled_** the WFUS App.")
