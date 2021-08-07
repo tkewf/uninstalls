@@ -126,14 +126,14 @@ if st.sidebar.button("Click Here to Classify"):
 
         #fig.suptitle('Days since Install', fontsize=20)
 
-        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,500],bins=40,color = 'darksalmon')
+        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[0,500],bins=40,color = 'darksalmon')
         ax[0].set_title('Uninstalled users')
         ax[0].set_ylim(top=10000)
         ax[0].set_xlabel('Days')
         ax[0].set_ylabel('Number of Users')
         
 
-        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,500],bins=40, color='skyblue')
+        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[0,500],bins=40, color='skyblue')
         ax[1].set_title('Persisting users')
         ax[1].set_ylim(top=10000)
         ax[1].set_xlabel('Days')
@@ -265,14 +265,14 @@ if st.sidebar.button("Click Here to Classify"):
 
         #fig.suptitle('Days since Install', fontsize=20)
 
-        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[1,500],bins=40,color = 'darksalmon')
+        ax[0].hist(df_uninstalled_sample['days_since_firstappvisit'],range=[0,500],bins=40,color = 'darksalmon')
         ax[0].set_title('Uninstalled users')
         ax[0].set_ylim(top=10000)
         ax[0].set_xlabel('Days')
         ax[0].set_ylabel('Number of Users')
         ax[0].axvline(parameter_input_values[1], 0, 10000, label='User value', color = 'purple')
 
-        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[1,500],bins=40, color='skyblue')
+        ax[1].hist(df_persisting_sample['days_since_firstappvisit'],range=[0,500],bins=40, color='skyblue')
         ax[1].set_title('Persisting users')
         ax[1].set_ylim(top=10000)
         ax[1].set_xlabel('Days')
