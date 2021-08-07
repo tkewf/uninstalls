@@ -182,7 +182,7 @@ if st.sidebar.button("Click Here to Classify"):
         
         last_days_input = parameter_input_values[0]
         median_last_days_input = statistics.median(df_persisting_sample.days_since_lastappvisit)
-        st.markdown("It has been **{} days** since this user installed the app,"
+        st.markdown("It has been **{} days** since this user last visited the app,"
                     "compared to the median number of days (**{}**) for **persisting** users.".format(last_days_input, median_last_days_input))
         st.write('') 
         st.write('')
@@ -215,8 +215,8 @@ if st.sidebar.button("Click Here to Classify"):
         st.write('')
         avg_page_views = parameter_input_values[2]
         median_avg_page_views = statistics.median(df_persisting_sample.AvgTotalPageViews)
-        st.markdown("It has been **{} days** since this user installed the app,"
-                    "compared to the median number of days (**{}**) for **persisting** users.".format(avg_page_views, median_avg_page_views))
+        st.markdown("The average number of pages viewed during the past week for this user is **{}**,"
+                    "compared to the median number of pages (**{}**) for **persisting** users.".format(avg_page_views, median_avg_page_views))
         st.write('') 
         st.write('')  
         # Fourth graph: Avg page views per session
