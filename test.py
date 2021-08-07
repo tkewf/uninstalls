@@ -147,8 +147,8 @@ if st.sidebar.button("Click Here to Classify"):
 
         st.write('')
         st.write('') 
-        st.markdown('It has been **{} days** since this user installed the app, '
-                    'compared to the median number of days :**{}** for **persisting** users.').format(parameter_input_values[0], median(df_persisting_sample[['days_since_firstappvisit']]))
+        st.markdown("It has been **{} days** since this user installed the app,"
+                    "compared to the median number of days :**{}** for **persisting** users.").format(parameter_input_values[0], median(df_persisting_sample[['days_since_firstappvisit']]))
         
         
         # Second graph: Days since last app visit
