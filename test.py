@@ -146,12 +146,13 @@ if st.sidebar.button("Click Here to Classify"):
         st.pyplot(fig)
 
         st.write('')
-        st.write('') 
+       
         days_input = parameter_input_values[0]
         median_days_input = statistics.median(df_persisting_sample.days_since_firstappvisit)
         st.markdown("It has been **{} days** since this user installed the app,"
                     "compared to the median number of days (**{}**) for **persisting** users.".format(days_input, median_days_input))
-        
+         st.write('') 
+            
         # Second graph: Days since last app visit
         st.markdown('### Days since last app visit')
         fig, ax = plt.subplots(1,2)# figsize=(10,12))
@@ -178,7 +179,14 @@ if st.sidebar.button("Click Here to Classify"):
         st.pyplot(fig)
 
         st.write('')
-        st.write('')  
+        
+        last_days_input = parameter_input_values[1]
+        median_last_days_input = statistics.median(df_persisting_sample.days_since_lastappvisit)
+        st.markdown("It has been **{} days** since this user installed the app,"
+                    "compared to the median number of days (**{}**) for **persisting** users.".format(last_days_input, median_last_days_input))
+        st.write('') 
+        
+
         # Third graph: Avg page views per session
         st.markdown('### Average Page Views per session')
         fig, ax = plt.subplots(1,2)# figsize=(10,12))
