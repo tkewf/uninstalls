@@ -52,10 +52,10 @@ parameter_input_values.append(values_num_apppvisits)
 #st.write('\n\n')
 
 def tree_new(input_variables): #max depth = 8, features = 5
-  AvgTotalPageViews = input_variables[0]
-  batch_delivers = input_variables[1]
-  days_since_lastappvisit = input_variables[2]
-  days_since_firstappvisit = input_variables[3]
+  days_since_lastappvisit = input_variables[0]
+  days_since_firstappvisit = input_variables[1]  
+  AvgTotalPageViews = input_variables[2]
+  batch_delivers = input_variables[3]
   num_app_visits = input_variables[4]
 
   if AvgTotalPageViews <= 0.5:
