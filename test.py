@@ -213,10 +213,10 @@ if st.sidebar.button("Click Here to Classify"):
         st.pyplot(fig)
 
         st.write('')
-        avg_page_views = parameter_input_values[3]
-        median_last_days_input = statistics.median(df_persisting_sample.days_since_lastappvisit)
+        avg_page_views = parameter_input_values[2]
+        median_avg_page_views = statistics.median(df_persisting_sample.AvgTotalPageViews)
         st.markdown("It has been **{} days** since this user installed the app,"
-                    "compared to the median number of days (**{}**) for **persisting** users.".format(last_days_input, median_last_days_input))
+                    "compared to the median number of days (**{}**) for **persisting** users.".format(avg_page_views, median_avg_page_views))
         st.write('') 
         st.write('')  
         # Fourth graph: Avg page views per session
