@@ -1,4 +1,4 @@
-WARNING: This app is strictly for visualization purposes and should not be used for commercial or other uses.
+WARNING: This app is strictly for visualization and educational purposes and should not be used for commercial or other uses.
 
 ## Android App Uninstall Prediction
 [![App Link here](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/tkewf/uninstalls/main/test.py)
