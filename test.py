@@ -357,7 +357,7 @@ if st.sidebar.button("Click Here to Classify"):
 
         #fig.suptitle('Number of app visits since last week', fontsize=20)
 
-        ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,20],bins=40,color = 'darksalmon')
+        ax[0].hist(df_uninstalled_sample['num_app_visits'],range=[0,20],bins=21,color = 'darksalmon')
         ax[0].set_title('Uninstalled users')
         ax[0].set_ylim(top=20000)
         ax[0].set_xlabel('Page Views')
